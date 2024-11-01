@@ -1,27 +1,27 @@
-const fs = require('fs');
+const fs = require('fs') 
 
-const User = require('../user/user');
+const User = require('../user/user') 
 
 function createUser(username, password) {
-  const fileData = fs.readFileSync('userData/userData.json');
-  const userData = JSON.parse(fileData);
+  const fileData = fs.readFileSync('userData/userData.json') 
+  const userData = JSON.parse(fileData) 
 
   for (const user of userData) {
     if (user.username === username) {
-      return 'Username already exists';
+      return 'Username already exists' 
     }
   }
 
-  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ 
 
   if (!passwordRegex.test(password)) {
-    return 'Password does not meet the criteria';
+    return 'Password does not meet the criteria' 
   }
 
-  const user = new User(username, password);
-  userData.push(user);
-  fs.writeFileSync('userData/userData.json', JSON.stringify(userData, null, 2));
+  const user = new User(username, password) 
+  userData.push(user) 
+  fs.writeFileSync('userData/userData.json', JSON.stringify(userData, null, 2)) 
 
-  return user;
+  return user 
 }
-module.exports = { createUser };
+module.exports = { createUser } 

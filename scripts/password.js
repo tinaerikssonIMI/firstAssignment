@@ -1,33 +1,33 @@
-const fs = require('fs');
+const fs = require('fs') 
 
 function changePassword(username, oldPassword, newPassword) {
-  const fileData = fs.readFileSync('userData/userData.json');
-  const userData = JSON.parse(fileData);
+  const fileData = fs.readFileSync('userData/userData.json') 
+  const userData = JSON.parse(fileData) 
 
-  let user = userData.find(user => user.username === username);
+  let user = userData.find(user => user.username === username) 
 
-  console.log(user);
+  console.log(user) 
   
   if (!user) {
-    return "User not found";
+    return "User not found" 
   }
 
   if (user.password !== oldPassword) {
-    return "Passwords not matching";
+    return "Passwords not matching" 
   }
 
   if (oldPassword === newPassword) {
-    return "New password cannot be the same as old password";
+    return "New password cannot be the same as old password" 
   }
 
-  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/ 
 
   if (!passwordRegex.test(newPassword)) {
-    return "invalid password";
+    return "invalid password" 
   }
 
-  user.password = newPassword;
-  fs.writeFileSync('userData/userData.json', JSON.stringify(userData, null, 2));
-  return true;
+  user.password = newPassword 
+  fs.writeFileSync('userData/userData.json', JSON.stringify(userData, null, 2)) 
+  return true 
 }
-module.exports = { changePassword };
+module.exports = { changePassword } 
