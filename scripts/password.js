@@ -1,7 +1,7 @@
-const fs = require('fs');
+const fs = require("fs");
 
 function changePassword(username, oldPassword, newPassword) {
-  const fileData = fs.readFileSync('userData/userData.json');
+  const fileData = fs.readFileSync("userData/userData.json");
   const userData = JSON.parse(fileData);
 
   let user = userData.find(user => user.username === username);
@@ -27,7 +27,7 @@ function changePassword(username, oldPassword, newPassword) {
   }
 
   user.password = newPassword;
-  fs.writeFileSync('userData/userData.json', JSON.stringify(userData, null, 2));
+  fs.writeFileSync("userData/userData.json", JSON.stringify(userData, null, 2));
   return true;
 }
 module.exports = { changePassword };
