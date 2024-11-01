@@ -13,7 +13,7 @@ function changePassword(username, oldPassword, newPassword) {
   }
 
   if (user.password !== oldPassword) {
-    return 'Passwords not matching';
+    return "Passwords not matching";
   }
 
   if (oldPassword === newPassword) {
