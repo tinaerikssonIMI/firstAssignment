@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Run eslint
-        run: npm lint
+        run: npx eslint .
 
       - name: Run tests
         run: npm test
