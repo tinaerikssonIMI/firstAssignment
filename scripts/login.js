@@ -10,6 +10,6 @@ function loginUser(username, password) {
     }
   }
 
-  return "Login failed, due to incorrect login credentials";
+  return "Login failed, due to incorrect login credentials"
 }
 module.exports = { loginUser };
