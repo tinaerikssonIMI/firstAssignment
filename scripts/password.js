@@ -5,8 +5,6 @@ function changePassword(username, oldPassword, newPassword) {
   const userData = JSON.parse(fileData);
 
   let user = userData.find(user => user.username === username);
-
-  console.log(user);
   
   if (!user) {
     return "User not found";

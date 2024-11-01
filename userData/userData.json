@@ -12,7 +12,15 @@
     "password": "Tina123!"
   },
   {
-    "username": "john_doe",
-    "password": "Password1@"
+    "username": "1",
+    "password": "2"
+  },
+  {
+    "username": "test",
+    "password": "111AAAA1!"
+  },
+  {
+    "username": "newUser",
+    "password": "Testar1234!"
   }
 ]
