@@ -1,2 +1,2 @@
-#Inlämningsuppgift 1
-Min första inlämningsuppgift för medieinstitutet
+#Inlämningsuppgift1
+- min första inlämningsuppgift för medieinstitutet
